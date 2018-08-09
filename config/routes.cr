@@ -28,6 +28,11 @@ Amber::Server.configure do
   end
 
   routes :web do
+    get "/session/new", SessionController, :new
+    get "/session/create", SessionController, :create
+    get "/session/delete", SessionController, :delete
+    resources "/users", UserController
+    resources "/comentarios", ComentariosController
     get "/", HomeController, :index
   end
 
